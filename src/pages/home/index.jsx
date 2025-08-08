@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const NeuroNexusAcademy = () => {
   const [activeMode, setActiveMode] = useState("ai");
@@ -196,9 +195,7 @@ const NeuroNexusAcademy = () => {
             >
               <div className="text-4xl animate-bounce">🎓</div>
               <div>
-                <h1 className="text-2xl font-black text-gray-800">
-                  NEURAL NEXUS
-                </h1>
+                <img className="max-w-[200px] w-full" src="./images/Screenshot_2025-08-08_172514-removebg-preview.png" alt="" />
                 <p className="text-gray-600 font-bold">BOLALAR AKADEMIYASI</p>
               </div>
             </motion.div>
@@ -481,9 +478,9 @@ const NeuroNexusAcademy = () => {
                 Bugun boshlang, ertaga ustoz bo'ling! 🚀
               </p>
 
-              <div className="flex flex-col md:flex-row gap-6 justify-center">
+              <div className="flex flex-col md:flex-row gap-4 sm:gap-6 justify-center">
                 <motion.button
-                  className="px-10 py-4 rounded-2xl font-black text-xl text-white relative overflow-hidden"
+                  className="px-6 py-3 sm:px-10 sm:py-4 rounded-2xl font-black text-base sm:text-xl text-white relative overflow-hidden"
                   style={{
                     background: `linear-gradient(45deg, ${modes[activeMode].color}, ${modes[activeMode].color}CC)`,
                     boxShadow: `0 8px 25px ${modes[activeMode].color}40`,
@@ -503,16 +500,14 @@ const NeuroNexusAcademy = () => {
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <Link to="/register">
-                    <span className="relative z-10 flex items-center gap-3">
-                      <span className="text-2xl">🎯</span>
-                      RO'YXATDAN O'TISH
-                    </span>
-                  </Link>
+                  <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                    <span className="text-xl sm:text-2xl">🎯</span>
+                    RO'YXATDAN O'TISH
+                  </span>
                 </motion.button>
 
                 <motion.button
-                  className="px-10 py-4 rounded-2xl font-black text-xl border-2 relative overflow-hidden backdrop-blur-sm"
+                  className="px-6 py-3 sm:px-10 sm:py-4 rounded-2xl font-black text-base sm:text-xl border-2 relative overflow-hidden backdrop-blur-sm"
                   style={{
                     borderColor: modes[activeMode].color,
                     color: modes[activeMode].color,
@@ -525,12 +520,10 @@ const NeuroNexusAcademy = () => {
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Link to="/curslar">
-                    <span className="flex items-center gap-3">
-                      <span className="text-2xl">📚</span>
-                      KURSLAR HAQIDA
-                    </span>
-                  </Link>
+                  <span className="flex items-center justify-center gap-2 sm:gap-3">
+                    <span className="text-xl sm:text-2xl">📚</span>
+                    KURSLAR HAQIDA
+                  </span>
                 </motion.button>
               </div>
             </motion.div>
