@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const NeuroNexusAcademy = () => {
   const [activeMode, setActiveMode] = useState("ai");
@@ -195,7 +196,11 @@ const NeuroNexusAcademy = () => {
             >
               <div className="text-4xl animate-bounce">🎓</div>
               <div>
-                <img className="max-w-[200px] w-full" src="./images/Screenshot_2025-08-08_172514-removebg-preview.png" alt="" />
+                <img
+                  className="max-w-[200px] w-full"
+                  src="./images/Screenshot_2025-08-08_172514-removebg-preview.png"
+                  alt=""
+                />
                 <p className="text-gray-600 font-bold">BOLALAR AKADEMIYASI</p>
               </div>
             </motion.div>
@@ -479,52 +484,56 @@ const NeuroNexusAcademy = () => {
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 sm:gap-6 justify-center">
-                <motion.button
-                  className="px-6 py-3 sm:px-10 sm:py-4 rounded-2xl font-black text-base sm:text-xl text-white relative overflow-hidden"
-                  style={{
-                    background: `linear-gradient(45deg, ${modes[activeMode].color}, ${modes[activeMode].color}CC)`,
-                    boxShadow: `0 8px 25px ${modes[activeMode].color}40`,
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -2,
-                    boxShadow: `0 12px 35px ${modes[activeMode].color}50`,
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  animate={{
-                    boxShadow: [
-                      `0 8px 25px ${modes[activeMode].color}40`,
-                      `0 10px 30px ${modes[activeMode].color}50`,
-                      `0 8px 25px ${modes[activeMode].color}40`,
-                    ],
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
-                    <span className="text-xl sm:text-2xl">🎯</span>
-                    RO'YXATDAN O'TISH
-                  </span>
-                </motion.button>
+                <Link to="/register">
+                  <motion.button
+                    className="px-6 py-3 sm:px-10 sm:py-4 rounded-2xl font-black text-base sm:text-xl text-white relative overflow-hidden"
+                    style={{
+                      background: `linear-gradient(45deg, ${modes[activeMode].color}, ${modes[activeMode].color}CC)`,
+                      boxShadow: `0 8px 25px ${modes[activeMode].color}40`,
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      y: -2,
+                      boxShadow: `0 12px 35px ${modes[activeMode].color}50`,
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    animate={{
+                      boxShadow: [
+                        `0 8px 25px ${modes[activeMode].color}40`,
+                        `0 10px 30px ${modes[activeMode].color}50`,
+                        `0 8px 25px ${modes[activeMode].color}40`,
+                      ],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                      <span className="text-xl sm:text-2xl">🎯</span>
+                      RO'YXATDAN O'TISH
+                    </span>
+                  </motion.button>
+                </Link>
 
-                <motion.button
-                  className="px-6 py-3 sm:px-10 sm:py-4 rounded-2xl font-black text-base sm:text-xl border-2 relative overflow-hidden backdrop-blur-sm"
-                  style={{
-                    borderColor: modes[activeMode].color,
-                    color: modes[activeMode].color,
-                    background: "rgba(255,255,255,0.3)",
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -2,
-                    backgroundColor: `${modes[activeMode].color}15`,
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className="flex items-center justify-center gap-2 sm:gap-3">
-                    <span className="text-xl sm:text-2xl">📚</span>
-                    KURSLAR HAQIDA
-                  </span>
-                </motion.button>
+                <Link to="/curslar">
+                  <motion.button
+                    className="px-6 py-3 sm:px-10 sm:py-4 rounded-2xl font-black text-base sm:text-xl border-2 relative overflow-hidden backdrop-blur-sm"
+                    style={{
+                      borderColor: modes[activeMode].color,
+                      color: modes[activeMode].color,
+                      background: "rgba(255,255,255,0.3)",
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      y: -2,
+                      backgroundColor: `${modes[activeMode].color}15`,
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className="flex items-center justify-center gap-2 sm:gap-3">
+                      <span className="text-xl sm:text-2xl">📚</span>
+                      KURSLAR HAQIDA
+                    </span>
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           </div>
