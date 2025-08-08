@@ -74,6 +74,7 @@ const RegistrationForm = () => {
     firstName: "",
     lastName: "",
     birthDate: "",
+    phone: "",
     telegram: "",
     email: "",
     education: "",
@@ -247,22 +248,6 @@ const RegistrationForm = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 py-8 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-6xl mb-4">🎓</div>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-800 mb-4">
-            NEURAL NEXUS ACADEMY
-          </h1>
-          <p className="text-xl text-gray-600 font-bold">
-            Kelajak texnologiyalarini o'rganing! 🚀
-          </p>
-        </motion.div>
-
         <motion.div
           className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/50"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -335,6 +320,31 @@ const RegistrationForm = () => {
               <div>
                 <label className="block font-bold text-gray-700 mb-2">
                   <span className="flex items-center gap-2">
+                    📱 Telefon raqam <span className="text-red-500">*</span>
+                  </span>
+                </label>
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">
+                    +998
+                  </span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    pattern="[0-9]{9}"
+                    title="9 ta raqamdan iborat bo'lishi kerak (masalan: 901234567)"
+                    className="w-full pl-14 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
+                    placeholder="901234567"
+                  />
+                </div>
+                <p className="text-sm text-gray-500 mt-1">Format: 901234567</p>
+              </div>
+
+              <div>
+                <label className="block font-bold text-gray-700 mb-2">
+                  <span className="flex items-center gap-2">
                     📱 Telegram <span className="text-red-500">*</span>
                   </span>
                 </label>
@@ -353,6 +363,9 @@ const RegistrationForm = () => {
                   />
                 </div>
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block font-bold text-gray-700 mb-2">
                   <span className="flex items-center gap-2">
@@ -369,23 +382,23 @@ const RegistrationForm = () => {
                   placeholder="email@example.com"
                 />
               </div>
-            </div>
 
-            <div>
-              <label className="block font-bold text-gray-700 mb-2">
-                <span className="flex items-center gap-2">
-                  🏫 O'qish joyi <span className="text-red-500">*</span>
-                </span>
-              </label>
-              <input
-                type="text"
-                name="education"
-                value={formData.education}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
-                placeholder="Maktab, kollej yoki universitet nomi"
-              />
+              <div>
+                <label className="block font-bold text-gray-700 mb-2">
+                  <span className="flex items-center gap-2">
+                    🏫 O'qish joyi <span className="text-red-500">*</span>
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="education"
+                  value={formData.education}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-400 focus:outline-none transition-all duration-300 bg-white/70 backdrop-blur-sm"
+                  placeholder="Maktab, kollej yoki universitet nomi"
+                />
+              </div>
             </div>
 
             {/* Direction Selection */}
